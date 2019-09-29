@@ -1,0 +1,40 @@
+{% extends "common/base.html" %}
+
+{% block title %}
+    密码管理器
+{% endblock title %}
+
+{% block content %}<!--自定义模板区域-->
+<!-- 输入窗口 -->
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <button class="close" data-dismiss="modal">
+                <span>&times;</span>
+            </button>
+        </div>
+        <div class="modal-title">
+            <h1 class="text-center">在线密码管理器</h1>
+        </div>
+        <div class="modal-body">
+            <form class="form-group" id="for_passwd" action="/show_passwd" name="for_passwd" onsubmit="return validateForm()" method="post"> 
+                    <div class="form-group">
+                        <label for="">简记名</label>
+                        <input class="form-control" name="rem_name" id="rem_name" type="text" placeholder="密码的简记名称">
+                    </div>
+                    <div class="form-group">
+                        <label for="">位数</label>
+                        <input class="form-control" name="length" id="length" type="text" placeholder="密码位数">
+                    </div>
+                    <div class="form-group">
+                        <label for="">密钥</label>
+                        <input class="form-control" name="key" id="key" type="password" placeholder="用于生成密码的密钥">
+                    </div>
+                    <div class="text-right">
+                        <input class="btn btn-primary" type="submit" value="生成">
+                    </div>
+                    
+            </form>
+        </div>
+    </div>
+{% endblock %}

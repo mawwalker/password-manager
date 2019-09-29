@@ -1,0 +1,15 @@
+[Unit]
+Description=flask for passwd
+After=network.target
+ 
+[Service]
+User=git
+Group=git
+ 
+WorkingDirectory=/home/git/passwd/app
+Environment="PATH=/home/git/passwd/venv/bin" 
+ExecStart=/home/git/passwd/venv/bin/uwsgi --socket 0.0.0.0:8000 -p 3 -w app:app
+PrivateTmp=true
+ 
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- 网站主语言 -->
+<html lang="zh-cn">
+<head>
+    <!-- 网站采用的字符编码 -->
+    <meta charset="utf-8">
+    <!-- 移动设备优化-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 预留网站标题的位置 -->
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <!-- 引入bootstrap的css文件 -->
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrapValidator.min.css') }}" rel="stylesheet">
+    <!-- <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"> -->
+    <link href="{{ url_for('static', filename='css/offcanvas.css') }}" rel="stylesheet">
+</head>
+
+<body style="background-color: azure">
+
+                {% block content %}<!--自定义模板区域-->
+                {% endblock %}
+
+<script>
+    function validateForm(){
+        var rem_name=document.forms["for_passwd"]["rem_name"].value;
+        var length=document.forms["for_passwd"]["length"].value;
+        var key=document.forms["for_passwd"]["key"].value;
+        if (rem_name==null || rem_name=="")
+        {
+            alert("简记名称必须填写");
+            return false;
+        }
+        if (length==null || length=="")
+        {
+            alert("密码位数必须填写");
+            return false;
+        }
+        if (isNaN(length))
+        {
+            alert("密码位数必须为数字");
+            return false;
+        }
+        if (key==null || key=="")
+        {
+            alert("密钥必须填写");
+            return false;
+        }
+    }
+</script>
+
+
+    {% block js %}<!--js模块区域-->
+    <!-- bootstrap.js 依赖 jquery.js 和popper.js，因此在这里引入 -->
+    <script src="{{ url_for('static', filename='js/jquery-1.12.4.min.js') }}"></script>
+
+    <!-- 引入bootstrap的js文件 -->
+    <script src="{{ url_for('static', filename='/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrapValidator.min.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/scripts.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='js/offcanvas.js') }}"></script>
+
+    {% endblock %}
+</body>
+
+</html>
