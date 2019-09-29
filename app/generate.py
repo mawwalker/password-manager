@@ -31,7 +31,7 @@ class passwd():
         print(self.md5_str)
         result = []
         for i in range(self.length):
-            random.seed(self.md5_str[i])
+            random.seed(self.md5_str[:i])
             index = random.randint(0, len(base_str)-1)
             result.append(base_str[index])
         return result
