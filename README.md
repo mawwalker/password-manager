@@ -15,4 +15,4 @@ You can deploy it to your linux server to make it more useful, it's up to you!
 
 Or, If you just want to run it locally, just run the generate.py. But remember to edit the parameters in it.
 
-More details refer to [my blog](https://www.smartdeng.com/2019/09/29/password-manager/).
+More details refer to [my blog](https://www.smartdeng.com/2019/12/25/password-manager/).
