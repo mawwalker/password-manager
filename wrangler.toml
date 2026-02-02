@@ -1,0 +1,9 @@
+name = "password-manager"
+main = "worker.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Custom domain configuration
+[[routes]]
+pattern = "passwd.smartdeng.com"
+custom_domain = true

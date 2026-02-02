@@ -26,6 +26,17 @@ def show_passwd():
     return render_template('result.html', result=result)
     # return ''.join(result)
     # return 'hello'
+    
+@app.route('/genPass/', methods=['GET'])
+def genPass():
+    rem_name = request.form.get('rem_name')
+    length = request.form.get('length')
+    key = request.form.get('key')
+    password = generate.passwd(rem_name, length, key)
+    password.genhash()
+    result = password.random_choose()
+    result = ''.join(result)
+    return result
 
 @app.route("/get_my_ip", methods=["GET"])
 def get_my_ip():

@@ -1,0 +1,19 @@
+{
+    "name": "password-manager-worker",
+    "version": "1.0.0",
+    "description": "Password manager deployed as Cloudflare Worker",
+    "type": "module",
+    "scripts": {
+        "dev": "wrangler dev",
+        "deploy": "wrangler deploy",
+        "tail": "wrangler tail"
+    },
+    "devDependencies": {
+        "wrangler": "^4.61.1"
+    },
+    "dependencies": {
+        "crypto": "^1.0.1",
+        "node-addon-api": "^8.5.0",
+        "node-gyp": "^12.2.0"
+    }
+}
